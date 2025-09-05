@@ -9,8 +9,13 @@
 	--mid-gray: #777;
 	--accent-color: #fff;
 	--border-color: #eee;
+	--table-header-color: #ddd;
 	--green: #0d9f43;
+	--light-green: #dbf3e4;
+	--orange: #ecb210;
+	--light-orange: #fff7dc;
 	--red: #fa3c3c;
+	--light-red: #ffd2d2;
 }
 
 
@@ -250,10 +255,13 @@ h5 {
 
 .statisticsIcon {
 	flex: 0 1 4rem;
+	display: flex;
+	justify-content: end;
+	align-items: start;
 }
 
 .statisticsIconBg {
-	width: 100%;
+	width: 2.5rem;
 	aspect-ratio: 1/1;
 	border-radius: .4rem;
 	display: grid;
@@ -277,7 +285,7 @@ h5 {
 }
 
 .statisticsIconSVG {
-	width: 1.75rem;
+	width: 1.5rem;
 	aspect-ratio: 1/1;
 }
 
@@ -304,7 +312,7 @@ h5 {
 	height: 1rem;
 }
 
-.monthGoal {
+#monthGoal .userGoalProgressTrack {
 	margin-top: 1.1rem;
 }
 
@@ -544,15 +552,19 @@ h5 {
 	flex: 0 1 100%;
 }
 
-.rankGraph {
+.rankGraph, .tableGraph {
 	max-height: 30rem;
 }
 
-.rankGraph .rankEntry > .rankNumber, .rankGraph .rankEntry > .profilePic {
-	width: 2.625rem;
+.rankGraph .rankEntry > .rankNumber, .profilePicSmall {
+	width: 2rem;
 	aspect-ratio: 1/1;
+	flex: 0 0 auto;
 	border-radius: 50%;
 	background: var(--border-color);
+}
+
+.rankGraph .rankEntry > .rankNumber {
 	display: grid;
 	place-items: center;
 	color: var(--mid-gray);
@@ -587,4 +599,57 @@ h5 {
 
 .rankGraph .status .userGoalProgressTrack {
 	width: 5rem;
+}
+
+.tableGraph th, .tableGraph td {
+	padding: .75rem 1rem;
+}
+
+.tableGraph table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.tableGraph tr {
+	text-align: left;
+}
+
+.tableGraph tr:nth-child(1) {
+	border-bottom: 2px solid var(--table-header-color);
+}
+
+.tableGraph tr:not(:nth-child(1)) {
+	border-bottom: 2px solid var(--border-color);
+}
+
+.tableGraph td:nth-child(1) {
+	display: inline-flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.tableGraph td:nth-child(3) {
+	font-weight: 700;
+}
+
+.tableGraph .goalMeasure {
+	padding: .15rem 1rem;
+	font-size: .75rem;
+	border-radius: 3rem;
+	font-weight: 600;
+}
+
+.tableGraph .overGoal {
+	color: var(--green);
+	background: var(--light-green);
+}
+
+.tableGraph .closeGoal {
+	color: var(--orange);
+	background: var(--light-orange);
+}
+
+.tableGraph .underGoal {
+	color: var(--red);
+	background: var(--light-red);
 }

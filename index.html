@@ -249,7 +249,7 @@
 				<div class="graphBody">
 					<div class="rankEntry">
 						<div class="rankNumber">1</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmall"></div>
 						<p class="userName">João Silva</p>
 						<div class="status">
 							<p>45.2K</p>
@@ -260,7 +260,7 @@
 					</div>
 					<div class="rankEntry">
 						<div class="rankNumber">2</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmall"></div>
 						<p class="userName">Maria Santos</p>
 						<div class="status">
 							<p>38.7K</p>
@@ -271,7 +271,7 @@
 					</div>
 					<div class="rankEntry">
 						<div class="rankNumber">3</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmall"></div>
 						<p class="userName">Pedro Costa</p>
 						<div class="status">
 							<p>32.1K</p>
@@ -282,7 +282,7 @@
 					</div>
 					<div class="rankEntry">
 						<div class="rankNumber">4</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmall"></div>
 						<p class="userName">Adriana Lima</p>
 						<div class="status">
 							<p>32K</p>
@@ -293,7 +293,7 @@
 					</div>
 					<div class="rankEntry">
 						<div class="rankNumber">5</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmall"></div>
 						<p class="userName">Margarida Pinhão</p>
 						<div class="status">
 							<p>31.5K</p>
@@ -304,7 +304,7 @@
 					</div>
 					<div class="rankEntry">
 						<div class="rankNumber">6</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmall"></div>
 						<p class="userName">Bruno Leite</p>
 						<div class="status">
 							<p>31.3K</p>
@@ -315,7 +315,7 @@
 					</div>
 					<div class="rankEntry">
 						<div class="rankNumber">7</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmall"></div>
 						<p class="userName">Ígor Santos</p>
 						<div class="status">
 							<p>30.9K</p>
@@ -326,7 +326,7 @@
 					</div>
 					<div class="rankEntry">
 						<div class="rankNumber">8</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmall"></div>
 						<p class="userName">Ana Carvalho</p>
 						<div class="status">
 							<p>27.2K</p>
@@ -337,7 +337,7 @@
 					</div>
 					<div class="rankEntry">
 						<div class="rankNumber">9</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmallSmall"></div>
 						<p class="userName">Renato Belchior</p>
 						<div class="status">
 							<p>26.8K</p>
@@ -348,7 +348,7 @@
 					</div>
 					<div class="rankEntry">
 						<div class="rankNumber">10</div>
-						<div class="profilePic"></div>
+						<div class="profilePicSmall"></div>
 						<p class="userName">Ricardo Junior</p>
 						<div class="status">
 							<p>24.8K</p>
@@ -359,15 +359,66 @@
 					</div>
 				</div>
 			</div>
-			<div class="graphBox gbLarge">
+			<div class="graphBox gbLarge tableGraph horizontalLinesTable">
 				<div class="graphHeader">
 					<h3>Análise Detalhada de Vendas</h3>
-					<button class="graphOptions transparentBt">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-							<path d="M96 320C96 289.1 121.1 264 152 264C182.9 264 208 289.1 208 320C208 350.9 182.9 376 152 376C121.1 376 96 350.9 96 320zM264 320C264 289.1 289.1 264 320 264C350.9 264 376 289.1 376 320C376 350.9 350.9 376 320 376C289.1 376 264 350.9 264 320zM488 264C518.9 264 544 289.1 544 320C544 350.9 518.9 376 488 376C457.1 376 432 350.9 432 320C432 289.1 457.1 264 488 264z"/>
-						</svg>
-					</button>
+					<div>
+						<button id="export" class="bt">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="navIcon">
+								<path d="M352 96C352 78.3 337.7 64 320 64C302.3 64 288 78.3 288 96L288 306.7L246.6 265.3C234.1 252.8 213.8 252.8 201.3 265.3C188.8 277.8 188.8 298.1 201.3 310.6L297.3 406.6C309.8 419.1 330.1 419.1 342.6 406.6L438.6 310.6C451.1 298.1 451.1 277.8 438.6 265.3C426.1 252.8 405.8 252.8 393.3 265.3L352 306.7L352 96zM160 384C124.7 384 96 412.7 96 448L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 448C544 412.7 515.3 384 480 384L433.1 384L376.5 440.6C345.3 471.8 294.6 471.8 263.4 440.6L206.9 384L160 384zM464 440C477.3 440 488 450.7 488 464C488 477.3 477.3 488 464 488C450.7 488 440 477.3 440 464C440 450.7 450.7 440 464 440z"/>
+							</svg>
+							Exportar
+						</button>
+					</div>
 				</div>
+				<table>
+					<tr>
+						<th>Vendedor</th>
+						<th>Equipa</th>
+						<th>Vendas</th>
+						<th>Meta</th>
+						<th>Conversão</th>
+						<th>Status</th>
+					</tr>
+					<tr>
+						<td>
+							<div class="profilePicSmall"></div>
+							João Silva
+						</td>
+						<td>Equipa A</td>
+						<td>€45.2K</td>
+						<td>€50K</td>
+						<td>28.5%</td>
+						<td>
+							<span class="overGoal goalMeasure">Acima da Meta</span></td>
+					</tr>
+					<tr>
+						<td>
+							<div class="profilePicSmall"></div>
+							Maria Santos
+						</td>
+						<td>Equipa B</td>
+						<td>€38.7K</td>
+						<td>€40K</td>
+						<td>24.1%</td>
+						<td>
+							<span class="closeGoal goalMeasure">Próximo da Meta</span>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class="profilePicSmall"></div>
+							Pedro Costa
+						</td>
+						<td>Equipa C</td>
+						<td>€32.1K</td>
+						<td>€40K</td>
+						<td>19.9%</td>
+						<td>
+							<span class="underGoal goalMeasure">Abaixo da Meta</span>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</div>
     </div>
