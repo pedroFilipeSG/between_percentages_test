@@ -6,7 +6,7 @@
 	--main-color-graphs: #3b82f6;
 	--main-color-light: #eff6ff;
 	--text-color: #111;
-	--mid-color: #777;
+	--mid-gray: #777;
 	--accent-color: #fff;
 	--border-color: #eee;
 	--green: #0d9f43;
@@ -40,7 +40,7 @@ button, select {
 }
 
 .container { padding: 1.25rem; }
-.border { border: 1px solid var(--mid-color) }
+.border { border: 1px solid var(--mid-gray) }
 
 .transparentBt {
 	background: transparent;
@@ -59,7 +59,7 @@ h3 {
 }
 
 h5 {
-	color: var(--mid-color);
+	color: var(--mid-gray);
 	font-weight: 500;
 	font-size: .9rem;
 	line-height: .9rem;
@@ -146,7 +146,7 @@ h5 {
 }
 
 .iconBt {
-	fill: var(--mid-color);
+	fill: var(--mid-gray);
 }
 
 .iconBt:hover {
@@ -196,7 +196,7 @@ h5 {
 	text-transform: uppercase;
 	font-size: .8rem;
 	font-weight: 700;
-	color: var(--mid-color);
+	color: var(--mid-gray);
 }
 
 #filters > select {
@@ -229,7 +229,7 @@ h5 {
 
 .filterTitle {
 	margin: 1rem auto .25rem;
-	color: var(--mid-color);
+	color: var(--mid-gray);
 }
 
 #statistics {
@@ -286,8 +286,8 @@ h5 {
 	display: flex;
 	align-items: center;
 	white-space: pre;
-	color: var(--mid-color);
-	fill: var(--mid-color);
+	color: var(--mid-gray);
+	fill: var(--mid-gray);
 }
 
 .statisticsText > p:nth-child(2) {
@@ -296,7 +296,7 @@ h5 {
 }
 
 .statisticsText > p:nth-child(1) {
-	color: var(--mid-color);
+	color: var(--mid-gray);
 }
 
 .HightLowPointer {
@@ -304,19 +304,26 @@ h5 {
 	height: 1rem;
 }
 
-#goalProgress {
+.monthGoal {
+	margin-top: 1.1rem;
+}
+
+.userGoalProgressTrack {
 	width: 100%;
 	height: .625rem;
-	margin-top: 1.1rem;
 	border-radius: .625rem;
 	background: var(--border-color);
 }
 
-#goalProgressVALUE {
-	width: 85.2%;
+.userGoalProgress {
 	height: .625rem;
 	border-radius: .625rem;
 	background: var(--green);
+}
+
+/* remove when insert javascript */
+#userGoalProgressVALUE {
+	width: 85.2%;
 }
 
 .negativeGrow {
@@ -417,7 +424,7 @@ h5 {
 	grid-template-areas:
 		'unitsLegend unitsMeasure graph'
 		'na na bottomLegend';
-	gap: 1rem;
+	column-gap: 1rem;
 }
 
 .barsGraph .unitsLegend {
@@ -504,7 +511,80 @@ h5 {
 	grid-area: bottomLegend;
 }
 
+.barsGraph .bottomLegend > li {
+	width: 2.625rem;
+	text-align: center;
+}
+
 .barsGraph ul {
 	list-style: none;
 }
 
+.rankGraph {
+	display: flex;
+	flex-direction: column;
+}
+
+.rankGraph .graphBody {
+	margin-top: 2rem;
+	overflow: auto;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.rankGraph .rankEntry {
+	width: 100%;
+	display: inline-flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.rankGraph .rankEntry > .userName {
+	flex: 0 1 100%;
+}
+
+.rankGraph {
+	max-height: 30rem;
+}
+
+.rankGraph .rankEntry > .rankNumber, .rankGraph .rankEntry > .profilePic {
+	width: 2.625rem;
+	aspect-ratio: 1/1;
+	border-radius: 50%;
+	background: var(--border-color);
+	display: grid;
+	place-items: center;
+	color: var(--mid-gray);
+	font-weight: 700;
+}
+
+.rankGraph .rankEntry:nth-child(1) > .rankNumber {
+	background: goldenrod;
+	color: var(--accent-color);
+}
+
+.rankGraph .rankEntry:nth-child(2) > .rankNumber {
+	background: silver;
+	color: var(--accent-color);
+}
+
+.rankGraph .rankEntry:nth-child(3) > .rankNumber {
+	background: coral;
+	color: var(--accent-color);
+}
+
+.rankGraph .status {
+	padding-right: 1rem;
+	display: inline-flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+.rankGraph .status p {
+	font-weight: 700;
+}
+
+.rankGraph .status .userGoalProgressTrack {
+	width: 5rem;
+}
