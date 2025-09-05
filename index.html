@@ -29,10 +29,10 @@
 					<path d="M224 64C206.3 64 192 78.3 192 96L192 128L160 128C124.7 128 96 156.7 96 192L96 240L544 240L544 192C544 156.7 515.3 128 480 128L448 128L448 96C448 78.3 433.7 64 416 64C398.3 64 384 78.3 384 96L384 128L256 128L256 96C256 78.3 241.7 64 224 64zM96 288L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 288L96 288z"/>
 				</svg>
 				<select name="dateRangeOpt" id="dateRangeOpt">
-					<option value="">Hoje</option>
-					<option value="">Última semana</option>
-					<option value="">Últimos 30 dias</option>
-					<option value="">Um ano</option>
+					<option value="todayStats">Hoje</option>
+					<option value="weekStats">Última semana</option>
+					<option value="monthStats" selected>Últimos 30 dias</option>
+					<option value="yearStats">Um ano</option>
 				</select>
 			</div>
 			<button id="export" class="bt">
@@ -176,7 +176,7 @@
 					</div>
 				</div>
 			</div>
-            <div id="mounthGoal" class="statisticsCard">
+            <div id="monthGoal" class="statisticsCard">
 				<div class="statisticsText">
 					<p>Meta Mensal</p>
 					<p><span id="totalGoalVALUE">85.2</span>%</p>
@@ -194,7 +194,7 @@
 			</div>
         </div>
 		<div id="graphs">
-			<div class="graphBox gbMedium">
+			<div class="graphBox gbMedium barsGraph">
 				<div class="graphHeader">
 					<h3>Vendas por Mês</h3>
 					<button class="graphOptions transparentBt">
@@ -203,8 +203,41 @@
 						</svg>
 					</button>
 				</div>
+				<div class="graphBody">
+					<div class="unitsLegend">Vendas (€K)</div>
+					<ul class="unitsMeasure">
+						<li>200</li>
+						<li>150</li>
+						<li>100</li>
+						<li>50</li>
+						<li>0</li>
+					</ul>
+					<div class="graph">
+						<hr>
+						<hr>
+						<hr>
+						<hr>
+						<hr class="bottomHR">
+						<div class="bars">
+							<div class="bar" data-month="january"></div>
+							<div class="bar" data-month="february"></div>
+							<div class="bar" data-month="march"></div>
+							<div class="bar" data-month="april"></div>
+							<div class="bar" data-month="may"></div>
+							<div class="bar" data-month="june"></div>
+						</div>
+					</div>
+					<ul class="bottomLegend">
+						<li data-month="january">Jan</li>
+						<li data-month="february">Feb</li>
+						<li data-month="march">Mar</li>
+						<li data-month="april">Abr</li>
+						<li data-month="may">Mai</li>
+						<li data-month="june">Jun</li>
+					</ul>
+				</div>
 			</div>
-			<div class="graphBox gbMedium">
+			<div class="graphBox gbMedium rankGraph">
 				<div class="graphHeader">
 					<h3>Ranking de Vendedores</h3>
 					<button class="graphOptions transparentBt">
@@ -212,6 +245,9 @@
 							<path d="M96 320C96 289.1 121.1 264 152 264C182.9 264 208 289.1 208 320C208 350.9 182.9 376 152 376C121.1 376 96 350.9 96 320zM264 320C264 289.1 289.1 264 320 264C350.9 264 376 289.1 376 320C376 350.9 350.9 376 320 376C289.1 376 264 350.9 264 320zM488 264C518.9 264 544 289.1 544 320C544 350.9 518.9 376 488 376C457.1 376 432 350.9 432 320C432 289.1 457.1 264 488 264z"/>
 						</svg>
 					</button>
+				</div>
+				<div class="graphBody">
+
 				</div>
 			</div>
 			<div class="graphBox gbLarge">

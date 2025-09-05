@@ -3,6 +3,7 @@
 
 	--main-color: #2563EB;
 	--main-color-hover: #144abe;
+	--main-color-graphs: #3b82f6;
 	--main-color-light: #eff6ff;
 	--text-color: #111;
 	--mid-color: #777;
@@ -406,3 +407,104 @@ h5 {
 .graphOptions:hover {
 	background: var(--border-color);
 }
+
+.barsGraph .graphBody {
+	width: 100%;
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: auto auto 1fr;
+	grid-template-rows: auto auto;
+	grid-template-areas:
+		'unitsLegend unitsMeasure graph'
+		'na na bottomLegend';
+	gap: 1rem;
+}
+
+.barsGraph .unitsLegend {
+	writing-mode: vertical-lr;
+	text-align: center;
+	transform: rotateY(180deg) rotateX(180deg);
+	grid-area: unitsLegend;
+}
+
+.barsGraph .unitsMeasure {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: right;
+	grid-area: unitsMeasure;
+}
+
+.barsGraph .graph {
+	padding: .6rem 0rem;
+	grid-area: graph;
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	position: relative;
+}
+
+.barsGraph hr {
+	border: 1px solid var(--border-color);
+}
+
+.barsGraph hr.bottomHR {
+	border: 1px solid var(--text-color);
+}
+
+.barsGraph .bars {
+	inset: 0px 0px calc(0px + 2px) 0;
+	padding: .6rem 0rem;
+	display: flex;
+	position: absolute;
+	align-items: end;
+	justify-content: space-evenly;
+}
+
+.barsGraph .bars .bar {
+	width: 2.625rem;
+	background: var(--main-color-graphs);
+	border-radius: 4px 4px 0px 0px;
+}
+
+/* to remove once javascript is implemented */
+.barsGraph .bars > .bar:nth-child(1) {
+	height: 62%;
+}
+
+/* to remove once javascript is implemented */
+.barsGraph .bars > .bar:nth-child(2) {
+	height: 66%;
+}
+
+/* to remove once javascript is implemented */
+.barsGraph .bars > .bar:nth-child(3) {
+	height: 72.5%;
+}
+
+/* to remove once javascript is implemented */
+.barsGraph .bars > .bar:nth-child(4) {
+	height: 68%;
+}
+
+/* to remove once javascript is implemented */
+.barsGraph .bars > .bar:nth-child(5) {
+	height: 71%;
+}
+
+/* to remove once javascript is implemented */
+.barsGraph .bars > .bar:nth-child(6) {
+	height: 74%;
+}
+
+.barsGraph .bottomLegend {
+	width: auto;
+	display: inline-flex;
+	justify-content: space-evenly;
+	grid-area: bottomLegend;
+}
+
+.barsGraph ul {
+	list-style: none;
+}
+
