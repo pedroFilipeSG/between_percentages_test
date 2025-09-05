@@ -1,0 +1,408 @@
+:root {
+	font-size: 16px;
+
+	--main-color: #2563EB;
+	--main-color-hover: #144abe;
+	--main-color-light: #eff6ff;
+	--text-color: #111;
+	--mid-color: #777;
+	--accent-color: #fff;
+	--border-color: #eee;
+	--green: #0d9f43;
+	--red: #fa3c3c;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+	transition: color 150ms ease-in, background 150ms ease-in;
+}
+
+svg {
+	transition: fill 150ms ease-in;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	color: var(--text-color);
+	display: grid;
+	grid-template-areas: "navbar navbar" "sidebar content";
+	grid-template-columns: 1fr 5fr;
+	grid-template-rows: 1fr 12fr;
+}
+
+button, select {
+	cursor: pointer;
+}
+
+.container { padding: 1.25rem; }
+.border { border: 1px solid var(--mid-color) }
+
+.transparentBt {
+	background: transparent;
+	border: 0;
+	line-height: 0;
+}
+
+h2 {
+	font-size: 1.5rem;
+	line-height: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+}
+
+h5 {
+	color: var(--mid-color);
+	font-weight: 500;
+	font-size: .9rem;
+	line-height: .9rem;
+}
+
+#navbar {
+	max-height: 3rem;
+	border-bottom: 2px solid var(--border-color);
+	display: flex;
+	justify-content: space-between;
+	grid-area: navbar;
+}
+
+#navTitle {
+	height: 100%;
+	margin-left: 1rem;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+}
+
+#titleLogo {
+	height: 100%;
+	aspect-ratio: 1/1;
+	padding: .5rem;
+	fill: var(--accent-color);
+	background: var(--main-color);
+	border-radius: .25rem;
+	box-sizing: border-box;
+}
+
+#navFunctions {
+	display: flex;
+	align-items: center;
+	gap: 1.375rem;
+}
+
+#pageTitle {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: .25rem;
+}
+
+.navIcon {
+	width: 1.375rem;
+	height: 1.375rem;
+}
+
+.selectWithIcon {
+	padding: 0rem 1rem;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	border: 2px solid var(--border-color);
+	border-radius: .5rem;
+	box-sizing: border-box;
+}
+
+.selectWithIcon > select {
+	height: 100%;
+	border: 0;
+	border-radius: .5rem;
+}
+
+.selectWithIcon > select:focus {
+	outline: none;
+}
+
+.bt {
+	padding: 0rem 1rem;
+	height: 3rem;
+	border: 0rem;
+	border-radius: .5rem;
+	background: var(--main-color);
+	display: flex;
+	align-items: center;
+	color: var(--accent-color);
+	fill: var(--accent-color);
+}
+
+.bt:hover {
+	background: var(--main-color-hover);
+}
+
+.iconBt {
+	fill: var(--mid-color);
+}
+
+.iconBt:hover {
+	fill: var(--main-color);
+}
+
+#sidebar {
+	grid-area: sidebar;
+	border-right: 2px solid var(--border-color);
+}
+
+#menu {
+	list-style: none;
+	margin-bottom: .75rem;
+}
+
+.menuOpt {
+	padding: 1rem;
+	margin-bottom: .25rem;
+	border-radius: .375rem;
+	cursor: pointer ;
+	display: flex;
+	gap: .5rem;
+}
+
+.menuOpt > svg {
+	height: 1.375rem;
+	fill: var(--text-color);
+}
+
+.menuOpt:hover, .menuOpt:hover > svg {
+	color: var(--main-color);
+	fill: var(--main-color);
+}
+
+.focusedPanel {
+	background: var(--main-color-light);
+}
+
+#filters {
+	padding: 0rem 1rem;
+	border-top: 2px solid var(--border-color);
+}
+
+#filters > p:first-child {
+	margin-top: 1rem;
+	text-transform: uppercase;
+	font-size: .8rem;
+	font-weight: 700;
+	color: var(--mid-color);
+}
+
+#filters > select {
+	width: 100%;
+}
+
+#dashboard {
+	grid-area: content;
+	overflow-y: auto;
+	overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+
+#accountBt {
+	height: 100%;
+	aspect-ratio: 1/1;
+	border: 0;
+	background-color: #777;
+	border-radius: 50%;
+}
+
+.filterSelect {
+	padding: .5rem 1rem;
+	font-size: .875rem;
+	border-radius: .375rem;
+	border: 2px solid var(--border-color);
+}
+
+.filterTitle {
+	margin: 1rem auto .25rem;
+	color: var(--mid-color);
+}
+
+#statistics {
+	display: flex;
+	gap: 1.25rem;
+}
+
+.statisticsCard {
+	flex-basis: 25%;
+	padding: 1.75rem 2rem;
+	border: 2px solid var(--border-color);
+	border-radius: .5rem;
+	box-sizing: border-box;
+	display: inline-flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.statisticsIcon {
+	flex: 0 1 4rem;
+}
+
+.statisticsIconBg {
+	width: 100%;
+	aspect-ratio: 1/1;
+	border-radius: .4rem;
+	display: grid;
+	place-items: center;
+}
+
+#statsIconSales {
+	background: var(--light-green);
+}
+
+#statsIconSales {
+	background: var(--light-green);
+}
+
+#statsIconSales {
+	background: var(--light-green);
+}
+
+#statsIconSales {
+	background: var(--light-green);
+}
+
+.statisticsIconSVG {
+	width: 1.75rem;
+	aspect-ratio: 1/1;
+}
+
+.statisticsText > p:nth-child(3) {
+	margin-top: 1rem;
+	display: flex;
+	align-items: center;
+	white-space: pre;
+	color: var(--mid-color);
+	fill: var(--mid-color);
+}
+
+.statisticsText > p:nth-child(2) {
+	font-size: 2.25rem;
+	font-weight: 700;
+}
+
+.statisticsText > p:nth-child(1) {
+	color: var(--mid-color);
+}
+
+.HightLowPointer {
+	width: 1rem;
+	height: 1rem;
+}
+
+#goalProgress {
+	width: 100%;
+	height: .625rem;
+	margin-top: 1.1rem;
+	border-radius: .625rem;
+	background: var(--border-color);
+}
+
+#goalProgressVALUE {
+	width: 85.2%;
+	height: .625rem;
+	border-radius: .625rem;
+	background: var(--green);
+}
+
+.negativeGrow {
+	color: var(--red);
+	fill: var(--red);
+}
+
+.positiveGrow {
+	color: var(--green);
+	fill: var(--green);
+}
+
+#statsIconSales {
+	background: #dcfce7;
+}
+
+#statsIconSales > .statisticsIconSVG {
+	fill: #0d9f43;
+}
+
+#statsIconConvert {
+	background: #dbeafe;
+}
+
+#statsIconConvert > .statisticsIconSVG {
+	fill: #0b51e8;
+}
+
+#statsIconTicket {
+	background: #fef9c3;
+}
+
+#statsIconTicket > .statisticsIconSVG {
+	fill: #ca8a04;
+}
+
+#statsIconGoal {
+	background: #f3e8ff;
+}
+
+#statsIconGoal > .statisticsIconSVG {
+	fill: #8c26e8;
+}
+
+#graphs {
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.25rem;
+}
+
+.graphBox {
+	padding: 2.5rem 2rem;
+	border: 2px solid var(--border-color);
+	border-radius: .5rem;
+	box-sizing: border-box;
+}
+
+.gbSmall {
+	flex-basis: calc(100% / 3 - 2.5rem / 3);
+}
+
+.gbMedium {
+	flex-basis: calc(50% - .625rem);
+}
+
+.gbLarge {
+	flex-basis: 100%;
+}
+
+.graphHeader {
+	width: 100%;
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.graphOptions > svg {
+	height: 1.5rem;
+	padding: .25rem;
+}
+
+.graphOptions {
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.graphOptions:hover {
+	background: var(--border-color);
+}
